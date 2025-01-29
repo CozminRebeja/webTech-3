@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New User</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-100">
+    <section class="p-4 flex-col h-full fixed bg-white border-gray-300 w-64">
+      <nav class="w-full h-full">
+        <img src="CompanyLogo.svg" alt="logo" class="w-40" />
+        <div class="flex-col gap-4 py-4">
+          <a
+            href="/"
+            class="inline-block w-full text-gray-700 hover:text-gray-900 hover:bg-gray-100 py-2 px-4 rounded-lg transition duration-150 ease-in-out"
+          >
+            Home
+          </a>
+          <a
+            href="/all"
+            class="inline-block w-full text-gray-700 hover:text-gray-900 hover:bg-gray-100 py-2 px-4 rounded-lg transition duration-150 ease-in-out"
+          >
+            All Users
+          </a>
+        </div>
+        <a
+          href="/add"
+          class="inline-block w-full bg-gray-900 text-white py-2 px-4 rounded-lg hover:bg-gray-800 transition duration-150 ease-in-out"
+        >
+          Add User
+        </a>
+      </nav>
+    </section>
+    <div class="ml-64 p-64">
+      <h1 class="text-3xl font-semibold mb-4 text-gray-900">Add New User</h1>
+      <form
+        action="/add"
+        method="POST"
+        enctype="multipart/form-data"
+        class="bg-white shadow-md rounded-lg p-6"
+      >
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-bold mb-2"
+            >Name</label
+          >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter name"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-700"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="surname" class="block text-gray-700 font-bold mb-2"
+            >Surname</label
+          >
+          <input
+            type="text"
+            id="surname"
+            name="surname"
+            placeholder="Enter surname"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-700"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="age" class="block text-gray-700 font-bold mb-2"
+            >Age</label
+          >
+          <input
+            type="number"
+            id="age"
+            name="age"
+            placeholder="Enter age"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-700"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="photo" class="block text-gray-700 font-bold mb-2"
+            >Photo</label
+          >
+          <input
+            type="file"
+            id="photo"
+            name="photo"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-700"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="cover" class="block text-gray-700 font-bold mb-2"
+            >Cover</label
+          >
+          <input
+            type="file"
+            id="cover"
+            name="cover"
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-700"
+          />
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            type="submit"
+            class="py-2 px-4 bg-gray-900 text-white font-semibold rounded-md transform transition-transform hover:bg-gray-800"
+          >
+            Add User
+          </button>
+          <a
+            href="/all"
+            class="border-2 border-red-500 bg-white hover:border-red-600 text-red-500 font-semibold py-2 px-4 rounded-md transform transition-transform"
+            >Cancel</a
+          >
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
