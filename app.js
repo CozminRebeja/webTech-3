@@ -1,32 +1,51 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const session = require('express-session');
+const cors = require('cors');
+const fileUpload = require('express-fileupload');
+const cookieParser = require('cookie-parser');
 
-// initialize express
 const app = express();
 const port = 6969;
 
-// set the view engine to ejs
-app.set('view engine', 'ejs');
-
-// set the path for static resources to be accessible
+// Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+app.use(cookieParser());
+
+// Handle file uploading
+app.use(fileUpload({ createParentPath: true }));
+
+// Session middleware
+app.use(
+  session({
+    secret: 'user-admin-123',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false },
+  })
+);
+
+// Set view engine
+app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-// set the path for routes
+// Routes
 const indexRouter = require('./routes/index');
 const userRoute = require('./routes/user');
 const addUserRoute = require('./routes/addUser');
 const showUsersRoute = require('./routes/allUsers');
+const authRoute = require('./routes/auth');
 
-// Use the routes
 app.use('/', indexRouter);
 app.use('/user', userRoute);
 app.use('/add', addUserRoute);
 app.use('/all', showUsersRoute);
+app.use('/auth', authRoute);
 
-// start the express server
+// Start server
 app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
+  console.log(`App ready at http://localhost:${port}`);
 });
