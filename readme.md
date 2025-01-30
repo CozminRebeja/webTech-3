@@ -4,6 +4,10 @@
 
 This project implements **CRUD (Create, Read, Update, Delete) operations** for user management using **Express.js**. It follows the **MVC (Model-View-Controller)** pattern to ensure a clean and modular code structure. The frontend is built using **EJS** for dynamic content rendering.
 
+## How to Run the Application
+
+open terminal and type `npm start`
+
 ## Features
 
 ### **Server-Side Implementation**
@@ -32,14 +36,6 @@ This project implements **CRUD (Create, Read, Update, Delete) operations** for u
 - **View**: Uses **EJS** to dynamically render content.
 - **Controller**: Manages request handling and business logic.
 
-#### **Authentication**
-
-- Only **logged-in users** can access the `/users` routes (if covered in class).
-
----
-
-### **Frontend Implementation**
-
 #### **User Views**
 
 - **Single User Views**:
@@ -54,28 +50,6 @@ This project implements **CRUD (Create, Read, Update, Delete) operations** for u
   - Link to the users' section.
 
 ---
-
-## General Requirements
-
-### **User Interface (UI)**
-
-✅ User-friendly, clean, and professional UI. ✅ Built using **EJS** for dynamic rendering.
-
-### **Code Structure**
-
-✅ Well-organized, following best practices. ✅ Proper naming conventions, indentation, and comments.
-
-### **Submission Guidelines**
-
-✅ **DO NOT** include `node_modules` in submission. ✅ Submit the project as a compressed file (.zip or .tar.gz) containing all necessary files. ✅ Include this **README.md** for instructions on running the application.
-
-### **Documentation**
-
-✅ Comment code for long-term maintainability. ✅ Ensure all dependencies are listed in `package.json`.
-
----
-
-## How to Run the Application
 
 ### **Prerequisites**
 
