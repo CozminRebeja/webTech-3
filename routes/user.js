@@ -51,7 +51,6 @@ router.post(
     user.age = req.body.age ? parseInt(req.body.age) : user.age;
 
     // Correct file handling
-
     if (req.files['photo']) {
       user.photo = req.files['photo'][0].filename;
     }

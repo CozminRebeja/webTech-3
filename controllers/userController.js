@@ -1,6 +1,4 @@
 const { usersData } = require('../models/userModel');
-const fs = require('fs');
-const path = require('path');
 
 const userController = {
   // Display a user's profile
@@ -58,29 +56,6 @@ const userController = {
 
     usersData.users.splice(userIndex, 1);
     res.redirect('/');
-
-    const userPhotosPath = path.join(
-      __dirname,
-      '..',
-      'public',
-      'uploads',
-      `photo${userId}`
-    );
-    const userCoverPath = path.join(
-      __dirname,
-      '..',
-      'public',
-      'uploads',
-      `cover${userId}`
-    );
-
-    if (fs.existsSync(userPhotosPath)) {
-      fs.rmSync(userPhotosPath, { recursive: true });
-    }
-
-    if (fs.existsSync(userCoverPath)) {
-      fs.rmSync(userCoverPath, { recursive: true });
-    }
   },
 };
 

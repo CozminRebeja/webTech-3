@@ -1,15 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const { getUsers } = require('../models/userModel');
 
-function isAuthenticated(req, res, next) {
-  if (req.session.user) {
-    return next(); // User is logged in
-  }
-  res.redirect('/auth/login'); // Redirect to login page if not authenticated
-}
+// Route to display all users
+router.get('/', (req, res) => {
+  const searchQuery = req.query.search || '';
+  const users = getUsers(searchQuery);
 
-router.get('/', isAuthenticated, (req, res) => {
-  res.render('allUsers', { users: [{ name: 'User1' }, { name: 'User2' }] });
+  // Render the 'listUsers.ejs' file
+  res.render('../views/listUsers', { users });
 });
 
 module.exports = router;
